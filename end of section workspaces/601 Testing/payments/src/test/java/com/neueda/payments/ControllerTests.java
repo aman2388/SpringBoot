@@ -38,7 +38,7 @@ public class ControllerTests {
     @MockBean
     private UserService userService;
     @MockBean
-    BootstrapService bootstrapService;
+    private BootstrapService bootstrapService;
 
     @MockBean
     private RepoLoggingAspect repoLoggingAspect;
