@@ -5,6 +5,7 @@ import com.neueda.payments.model.Payment;
 import com.neueda.payments.repositories.PaymentsRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.*;
 
 import java.util.*;
@@ -13,7 +14,7 @@ import java.util.*;
 public class PaymentsServiceImpl implements PaymentsService {
 
     private PaymentsRepository paymentsRepository;
-
+    @Autowired
     public PaymentsServiceImpl(PaymentsRepository paymentsRepository) {
         this.paymentsRepository = paymentsRepository;
     }

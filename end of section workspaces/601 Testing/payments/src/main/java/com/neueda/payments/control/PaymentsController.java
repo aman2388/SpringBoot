@@ -15,7 +15,7 @@ import java.util.List;
 public class PaymentsController {
 
     private PaymentsService paymentsService;
-
+    @Autowired
     public PaymentsController(PaymentsService paymentService) {
         this.paymentsService = paymentService;
     }
