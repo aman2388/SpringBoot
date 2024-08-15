@@ -8,11 +8,9 @@ import org.springframework.context.ApplicationContext;
 public class SpringContainerDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringContainerDemoApplication.class, args);
+		ApplicationContext context = SpringApplication.run(SpringContainerDemoApplication.class, args);
 
-		InvoiceDataInterface invoiceData = new InvoiceData();
-		InvoiceUtilitiesInterface invoiceUtilities = new InvoiceUtilities();
-		invoiceUtilities.setInvoiceData(invoiceData);
+		InvoiceUtilitiesInterface invoiceUtilities = context.getBean(InvoiceUtilitiesInterface.class);
 
 		Invoice invoice = invoiceUtilities.generateInvoice();
 		invoiceUtilities.payInvoice(invoice.getId());

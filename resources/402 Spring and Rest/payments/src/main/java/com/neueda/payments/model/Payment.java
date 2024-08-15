@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.time.*;
+import java.util.Objects;
 
 @Entity
 public class Payment {
@@ -99,6 +100,19 @@ public class Payment {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Payment payment = (Payment) o;
+        return Objects.equals(id, payment.id) && Objects.equals(amount, payment.amount) && Objects.equals(country, payment.country) && Objects.equals(currency, payment.currency) && Objects.equals(date, payment.date) && Objects.equals(orderId, payment.orderId) && Objects.equals(taxCode, payment.taxCode) && Objects.equals(taxRate, payment.taxRate) && Objects.equals(type, payment.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, amount, country, currency, date, orderId, taxCode, taxRate, type);
     }
 
     @Override

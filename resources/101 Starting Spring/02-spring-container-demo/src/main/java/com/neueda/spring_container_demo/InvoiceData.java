@@ -1,7 +1,10 @@
 package com.neueda.spring_container_demo;
 
+import org.springframework.stereotype.Component;
+
 import java.util.*;
 
+@Component
 public class InvoiceData implements InvoiceDataInterface {
 
     /*

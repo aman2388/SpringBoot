@@ -9,4 +9,7 @@ import java.util.*;
 @Repository
 public interface PaymentsRepository extends JpaRepository<Payment, Long> {
 
+    public List<Payment> getPaymentByCountry(String country);
+
+    public List<Payment> findAllByOrderId(String orderId);
 }

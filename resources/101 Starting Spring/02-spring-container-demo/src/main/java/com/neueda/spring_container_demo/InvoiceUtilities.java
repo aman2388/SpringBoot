@@ -1,9 +1,13 @@
 package com.neueda.spring_container_demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.*;
 
+@Component
 public class InvoiceUtilities implements InvoiceUtilitiesInterface {
-
+    @Autowired
     private InvoiceDataInterface invoiceData;
 
     @Override
